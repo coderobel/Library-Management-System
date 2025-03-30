@@ -1,7 +1,5 @@
 from django import forms
-from .models import Books
 
-class BookForm(forms.ModelForm):
-    class Meta:
-        model = Books
-        fields = ['title', 'author', 'isbn' , 'publication_year', 'genre' ]
+class CreateNewList(forms.Form):
+    name = forms.CharField(label="Name", max_length=200)
+    check = forms.BooleanField(required = False)
