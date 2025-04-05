@@ -4,10 +4,10 @@
 Create New List
 {% endblock %}
 {% block content %}
-Create Page
-<form method="post" action="/create/">
+<h1>Add Book To Library</h1>
+<form method="post" action="/create/" class="form-group">
     {% csrf_token %}
     {{form.as_p }}
-    <button type ="submit", name="save">Create New</button>
+    <button type ="submit", name="save">Insert New Book</button>
 </form>
 {% endblock %}

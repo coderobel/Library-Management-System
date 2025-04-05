@@ -2,10 +2,13 @@
 {% block title %}View Books{% endblock %}
 
 {% block content%}
-<h1>{{books.title}}</h1>
+<h1>BOOKS AVAILABLE</h1>
+<h2>{{books.title}}</h2>
 <ul>
     {% for book in books %}
-        <h2><li>{{book.title}}</li></h2>
+        <h3><li>{{book.title}}</li></h3>
+        <h4><li>{{book.author}}</li></h4>
+        <h8><li>{{book.isbn}}</li></h8>
     {% endfor %}
 </ul>
 {% endblock %}
