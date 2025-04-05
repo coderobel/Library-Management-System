@@ -6,7 +6,16 @@
 <h2>{{books.title}}</h2>
 <ul>
     {% for book in books %}
-        <h3><li>{{book.title}}</li></h3>
+        <h3>
+            <li>
+                {{book.title}}
+                <!-- Delete Button -->
+                <form method="post" action="{% url 'delete_book' book.title %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </li>
+        </h3>
         <h4><li>{{book.author}}</li></h4>
         <h8><li>{{book.isbn}}</li></h8>
     {% endfor %}

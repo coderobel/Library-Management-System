@@ -25,4 +25,9 @@ def create(request):
             return HttpResponseRedirect("/books/booklist" )
     else:
         form = CreateNewList
-    return render(request, "books/create.html", {"form":form})
+        return render(request, "books/create.html", {"form":form})
+def delete_book(request, title):
+    book = Books.objects.get(title=title)
+    if request.method == "POST":
+        book.delete()
+        return HttpResponseRedirect("/books/booklist" )
